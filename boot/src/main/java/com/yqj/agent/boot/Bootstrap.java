@@ -14,7 +14,7 @@ import com.sun.tools.attach.VirtualMachineDescriptor;
 public class Bootstrap {
 
     public static void main(String[] args) throws Exception{
-        String targetPid = "69554";
+        String targetPid = "81013";
 
         VirtualMachineDescriptor virtualMachineDescriptor = null;
         for (VirtualMachineDescriptor descriptor : VirtualMachine.list()) {
@@ -30,7 +30,7 @@ public class Bootstrap {
         VirtualMachine virtualMachine = VirtualMachine.attach(virtualMachineDescriptor);
 
         // 通过 load agent 启动方法
-        virtualMachine.loadAgent("");
+        virtualMachine.loadAgent("/Users/yaoqijun/workspace/person/AgentShellClassConfig/build/agent-core-jar-with-dependencies.jar");
     }
 
 }
