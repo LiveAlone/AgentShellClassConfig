@@ -7,18 +7,10 @@
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>agent-boot</artifactId>
-    <name>agent-boot</name>
+    <artifactId>agent-core</artifactId>
+    <name>agent-core</name>
 
     <dependencies>
-        <!-- for com.sun.tools.attach.VirtualMachine api -->
-        <dependency>
-            <groupId>com.github.olivergondza</groupId>
-            <artifactId>maven-jdk-tools-wrapper</artifactId>
-            <version>0.1</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -27,7 +19,7 @@
     </dependencies>
 
     <build>
-        <finalName>agent-boot</finalName>
+        <finalName>agent-core</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -53,10 +45,11 @@
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
                             <archive>
-                                <manifest>
-                                    <mainClass>com.yqj.agent.boot.Bootstrap</mainClass>
-                                </manifest>
                                 <manifestEntries>
+                                    <Premain-Class>com.yqj.agent.core.AgentBootStrap</Premain-Class>
+                                    <Agent-Class>com.yqj.agent.core.AgentBootStrap</Agent-Class>
+                                    <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                                    <Can-Retransform-Classes>true</Can-Retransform-Classes>
                                     <Specification-Title>${project.name}</Specification-Title>
                                     <Specification-Version>${project.version}</Specification-Version>
                                     <Implementation-Title>${project.name}</Implementation-Title>

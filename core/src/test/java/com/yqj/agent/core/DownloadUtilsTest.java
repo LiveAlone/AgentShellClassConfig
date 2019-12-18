@@ -1,4 +1,4 @@
-package com.yqj.agent.boot;
+package com.yqj.agent.core;
 
 
 public class DownloadUtilsTest {

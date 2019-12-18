@@ -11,7 +11,7 @@
         <!-- <module>spy</module> -->
         <!-- <module>common</module> -->
         <!-- <module>tunnel-client</module> -->
-        <!-- <module>core</module> -->
+         <module>core</module>
         <!-- <module>agent</module> -->
         <!-- <module>client</module> -->
         <!-- <module>memorycompiler</module> -->
