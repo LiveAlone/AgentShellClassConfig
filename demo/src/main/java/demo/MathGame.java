@@ -14,7 +14,7 @@ public class MathGame {
         MathGame game = new MathGame();
         while (true) {
             game.run();
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
         }
     }
 
