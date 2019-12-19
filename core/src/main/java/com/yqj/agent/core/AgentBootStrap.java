@@ -17,6 +17,6 @@ public class AgentBootStrap {
 
     public static void agentmain(String args, Instrumentation inst) throws Exception {
         System.out.println("agent main content execution content");
-        ToolsUtil.healDumpToFile();
+        ToolsUtil.dumpClassFileContent(inst);
     }
 }
