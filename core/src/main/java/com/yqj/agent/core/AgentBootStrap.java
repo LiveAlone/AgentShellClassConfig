@@ -17,5 +17,6 @@ public class AgentBootStrap {
 
     public static void agentmain(String args, Instrumentation inst) {
         System.out.println("agent main content execution content");
+        ToolsUtil.printAllLoadedClass(inst);
     }
 }
