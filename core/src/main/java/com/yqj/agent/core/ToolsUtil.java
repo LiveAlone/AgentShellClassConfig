@@ -22,8 +22,10 @@ public class ToolsUtil {
     }
 
     public static void healDumpToFile() throws Exception{
+        System.out.println("start heap dump");
         HotSpotDiagnosticMXBean hotSpotDiagnosticMXBean = ManagementFactory.getPlatformMXBean(HotSpotDiagnosticMXBean.class);
         hotSpotDiagnosticMXBean.dumpHeap("heapdumpTest.hprof", true);
+        System.out.println("finish heap dump");
     }
 
 }
