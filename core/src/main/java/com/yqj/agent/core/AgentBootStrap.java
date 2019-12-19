@@ -15,8 +15,8 @@ public class AgentBootStrap {
         System.out.println("current pre main content test config");
     }
 
-    public static void agentmain(String args, Instrumentation inst) {
+    public static void agentmain(String args, Instrumentation inst) throws Exception {
         System.out.println("agent main content execution content");
-        ToolsUtil.printAllLoadedClass(inst);
+        ToolsUtil.healDumpToFile();
     }
 }

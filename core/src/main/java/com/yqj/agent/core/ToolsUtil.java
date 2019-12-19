@@ -1,6 +1,10 @@
 package com.yqj.agent.core;
 
+import com.sun.management.HotSpotDiagnosticMXBean;
+
 import java.lang.instrument.Instrumentation;
+import java.lang.management.ManagementFactory;
+import java.util.Arrays;
 
 /**
  * Description:
@@ -12,10 +16,14 @@ import java.lang.instrument.Instrumentation;
 public class ToolsUtil {
 
     public static void printAllLoadedClass(Instrumentation inst){
-        for (Class allLoadedClass : inst.getAllLoadedClasses()) {
-            System.out.println(allLoadedClass.getName());
-        }
+        System.out.println("print all loaded class start");
+        Arrays.stream(inst.getAllLoadedClasses()).map(Class::getName).forEach(System.out::println);
         System.out.println("all class loaded finish");
+    }
+
+    public static void healDumpToFile() throws Exception{
+        HotSpotDiagnosticMXBean hotSpotDiagnosticMXBean = ManagementFactory.getPlatformMXBean(HotSpotDiagnosticMXBean.class);
+        hotSpotDiagnosticMXBean.dumpHeap("heapdumpTest.hprof", true);
     }
 
 }
