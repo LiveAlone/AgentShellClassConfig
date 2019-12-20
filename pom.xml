@@ -30,16 +30,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm</artifactId>
-                <version>7.0</version>
-            </dependency>
-            <dependency>
-                <groupId>org.ow2.asm</groupId>
-                <artifactId>asm-commons</artifactId>
-                <version>7.0</version>
-            </dependency>
+
             <dependency>
                 <groupId>org.benf</groupId>
                 <artifactId>cfr</artifactId>
@@ -103,37 +94,10 @@
             </dependency>
 
             <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-common</artifactId>
-                <version>4.1.39.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-buffer</artifactId>
-                <version>4.1.39.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-handler</artifactId>
-                <version>4.1.39.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-transport</artifactId>
-                <version>4.1.39.Final</version>
-            </dependency>
-            <dependency>
-                <groupId>io.netty</groupId>
-                <artifactId>netty-codec-http</artifactId>
-                <version>4.1.39.Final</version>
-            </dependency>
-
-            <dependency>
                 <groupId>jline</groupId>
                 <artifactId>jline</artifactId>
                 <version>2.14.6</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

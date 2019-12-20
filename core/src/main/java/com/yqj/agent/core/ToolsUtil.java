@@ -1,6 +1,7 @@
 package com.yqj.agent.core;
 
 import com.sun.management.HotSpotDiagnosticMXBean;
+import com.sun.management.VMOption;
 
 import java.lang.instrument.Instrumentation;
 import java.lang.management.ManagementFactory;
@@ -16,6 +17,13 @@ import java.util.Arrays;
 public class ToolsUtil {
 
     private static final ClassDumpTransformer classDumpTransform = new ClassDumpTransformer();
+
+    public static void vmOptionsList(){
+        HotSpotDiagnosticMXBean hotSpotDiagnosticMXBean = ManagementFactory.getPlatformMXBean(HotSpotDiagnosticMXBean.class);
+        for (VMOption diagnosticOption : hotSpotDiagnosticMXBean.getDiagnosticOptions()) {
+            System.out.println("vm options list " + diagnosticOption.getName() + " " + diagnosticOption.getValue());
+        }
+    }
 
     public static void printAllLoadedClass(Instrumentation inst){
         System.out.println("print all loaded class start");
