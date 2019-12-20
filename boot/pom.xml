@@ -67,7 +67,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.yqj.agent.boot.Bootstrap</mainClass>
+                                    <mainClass>com.yqj.agent.boot.MainPi</mainClass>
                                 </manifest>
                                 <manifestEntries>
                                     <Specification-Title>${project.name}</Specification-Title>
