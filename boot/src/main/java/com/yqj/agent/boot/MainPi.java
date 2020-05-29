@@ -1,5 +1,7 @@
 package com.yqj.agent.boot;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -10,6 +12,8 @@ import java.util.concurrent.ThreadLocalRandom;
  * Email: yaoqijunmail@foxmail.com
  */
 public class MainPi {
+
+    public static final Set<Object> setTest = new HashSet<>();
 
     public static void main(String[] args) {
         for (int threadIndex = 0; threadIndex < 5; threadIndex++){
@@ -41,6 +45,8 @@ public class MainPi {
         long total = 360000000000L;
         for (long i=0; i<total; i++){
             byte[] unusedBlock = new byte[1024*1024];
+            // test memory leak
+            setTest.add(unusedBlock);
             double x = ThreadLocalRandom.current().nextDouble(1);
             double y = ThreadLocalRandom.current().nextDouble(1);
             if (Math.sqrt(x * x + y * y) < 1.0){
