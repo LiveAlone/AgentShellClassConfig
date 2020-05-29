@@ -40,6 +40,7 @@ public class MainPi {
         long count = 0;
         long total = 360000000000L;
         for (long i=0; i<total; i++){
+            byte[] unusedBlock = new byte[1024*1024];
             double x = ThreadLocalRandom.current().nextDouble(1);
             double y = ThreadLocalRandom.current().nextDouble(1);
             if (Math.sqrt(x * x + y * y) < 1.0){
