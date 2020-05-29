@@ -45,8 +45,8 @@ public class MainPi {
         long total = 360000000000L;
         for (long i=0; i<total; i++){
             byte[] unusedBlock = new byte[1024*1024];
-            // test memory leak
-            setTest.add(unusedBlock);
+//             test memory leak
+//            setTest.add(unusedBlock);
             double x = ThreadLocalRandom.current().nextDouble(1);
             double y = ThreadLocalRandom.current().nextDouble(1);
             if (Math.sqrt(x * x + y * y) < 1.0){
